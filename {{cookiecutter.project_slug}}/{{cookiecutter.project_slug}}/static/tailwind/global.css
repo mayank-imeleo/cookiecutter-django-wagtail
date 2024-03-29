@@ -1,0 +1,196 @@
+/*@tailwind base;*/
+/*@tailwind components;*/
+@tailwind utilities;
+
+/*https://docs.wagtail.org/en/stable/advanced_topics/customisation/admin_templates.html*/
+:root {
+  --w-color-primary: theme('colors.primary.600');
+
+  --w-color-secondary: theme('colors.secondary.600');
+  --w-color-secondary-400: theme('colors.primary.600');
+
+  --w-color-surface-menu-item-active: theme('colors.neutral.800');
+  --w-color-surface-tooltip: theme('colors.primary.700');
+
+  --w-color-info-50: theme('colors.primary.100');
+
+  /*--primary: var(--w-color-primary);*/
+  /*--secondary: var(--w-color-secondary);*/
+
+  --link-fg: theme('colors.primary.600');
+
+  --button-bg: theme('colors.primary.600');
+  --button-hover-bg: theme('colors.primary.500');
+
+  --default-button-bg: theme('colors.primary.600');
+  --default-button-hover-bg: theme('colors.primary.500');
+}
+
+@media (max-width: 1024px) {
+  .login {
+    /*background: rgb(162, 159, 209);*/
+    /*background: linear-gradient(90deg, rgba(162, 159, 209, 1) 0%, rgba(235, 86, 6, 1) 42%);*/
+    background: linear-gradient(
+      to top,
+      theme('colors.primary.600'),
+      theme('colors.primary.300')
+    );
+  }
+}
+
+@media (min-width: 1024px) {
+  .login {
+    background: linear-gradient(var(--w-color-white), var(--w-color-primary));
+    /*url(../images/login-bg-1380x920.png) no-repeat center;*/
+    background-size: 100% auto;
+  }
+
+  .content-wrapper {
+    background-color: theme('colors.primary.500');
+  }
+}
+
+.bg-primary {
+  background-color: var(--w-color-primary);
+}
+
+#locale-section {
+  display: none;
+}
+
+.sidebar-custom-branding {
+  background-color: var(--w-color-primary);
+  margin: 0;
+}
+
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+ul[aria-labelledby="wagtail-sidebar-submenu-assets-title"] > li:nth-child(3) {
+  border-top-color: theme('colors.gray.300');
+  border-top: solid 1px;
+}
+
+.icon--submenu-header {
+  color: var(--w-color-secondary);
+  font-size: 2rem;
+  opacity: 1 !important;
+}
+
+/* Page Edit Interface */
+.tab-content {
+  width: 85% !important;
+}
+
+.w-form-width,
+.w-panel__wrapper,
+.w-field-row {
+  width: 100%;
+  max-width: 100%;
+}
+
+#tab-content > .w-form-width > section {
+  border-bottom: var(--w-color-border-field-default) solid thin;
+}
+
+.w-header > header {
+  display: none;
+}
+
+.w-panel__content {
+  padding-top: 0.5rem;
+}
+
+/*#panel-child-content-title-section,*/
+.w-tabs__wrapper,
+.tab-promote,
+li > a[href="#panel-child-content-title-section"],
+  /*Page Listing*/
+#page-reorder-form td.no-children,
+header nav[aria-label="Actions"] {
+  /*display: none !important;*/
+}
+
+#tab-content {
+  margin-top: 2rem;
+}
+
+#tab-label-create {
+  display: none;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+}
+
+/*Listing Filters*/
+.nice-padding.filterable {
+  display: flex;
+}
+
+#listing-results {
+  flex-grow: 1;
+}
+
+.filterable__filters {
+  background-color: theme("colors.primary.100");
+  padding: 1rem;
+}
+
+th {
+  background-color: var(--w-color-primary);
+
+}
+
+.listing thead th a, .listing thead th {
+  font-weight: bolder;
+  color: white;
+  font-size: .95em;
+}
+
+.content dt {
+  color: var(--w-color-primary);
+  font-weight: bold;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+}
+
+table th {
+  max-width: 9rem;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+}
+
+table td {
+  border-right: 1px dashed var(--w-color-border-field-default);
+}
+
+table td:first-child {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+table td:last-child {
+  border-right: none;
+}
+
+table td.bulk-action-checkbox-cell {
+  border-left: none !important;
+  border-right: none !important;
+}
+

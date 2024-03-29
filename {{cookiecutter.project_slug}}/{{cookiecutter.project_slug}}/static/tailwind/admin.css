@@ -1,0 +1,60 @@
+html[data-theme="light"], html[data-theme="dark"], :root {
+
+    --header-bg: theme('colors.primary.600');
+    --breadcrumbs-bg: theme('colors.primary.500');
+    --primary: theme('colors.primary.600');
+    --secondary: theme('colors.primary.500');
+
+    --link-fg: theme('colors.primary.600');
+    --link-hover-color: theme('colors.gray.700');
+
+    --button-bg: theme('colors.primary.600');
+    --button-hover-bg: theme('colors.primary.500');
+
+    --default-button-bg: theme('colors.primary.600');
+    --default-button-hover-bg: theme('colors.primary.500');
+
+    --object-tools-bg: theme('colors.primary.200');
+    --object-tools-hover-bg: theme('colors.primary.300');
+    --object-tools-fg: theme('colors.primary.700');
+
+}
+
+#branding #site-name a {
+    font-weight: bold;
+    color: theme('colors.white')
+}
+
+#content h1 {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+#content {
+    width: 95%;
+}
+
+li.selected * {
+    background-color: theme('colors.primary.100');
+    color: theme('colors.primary.600') !important;
+}
+
+/*.module h2, .module caption, .inline-group h2 {*/
+
+/*    background-color: var(--gray-100);*/
+
+/*    color: var(--orange-600);*/
+
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
