@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tw-wagtail-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/tailwind/global.css -o {{cookiecutter.project_slug}}/static/css/global.css --watch",
-    "tw-wagtail-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/tailwind/global.css -o {{cookiecutter.project_slug}}/static/css/global.css --minify",
+    "tw-wagtail-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/tailwind/global.css -o {{cookiecutter.project_slug}}/static/css/global.css --watch",
+    "tw-wagtail-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/tailwind/global.css -o {{cookiecutter.project_slug}}/static/css/global.css --minify",
 
-    "tw-admin-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/tailwind/admin.css -o {{cookiecutter.project_slug}}/static/css/admin.css --watch",
-    "tw-admin-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/tailwind/admin.css -o {{cookiecutter.project_slug}}/static/css/admin.css --minify"
+    "tw-admin-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/tailwind/admin.css -o {{cookiecutter.project_slug}}/static/css/admin.css --watch",
+    "tw-admin-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/tailwind/admin.css -o {{cookiecutter.project_slug}}/static/css/admin.css --minify"
   },
   "keywords": [],
   "author": "",
