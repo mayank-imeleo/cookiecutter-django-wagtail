@@ -48,10 +48,10 @@
     "Gulp",
     "Webpack"
   ],
-  "use_celery": "n",
+  "use_celery": "y",
   "use_mailhog": "n",
   "use_sentry": "n",
-  "use_whitenoise": "n",
+  "use_whitenoise": "y",
   "use_heroku": "n",
   "ci_tool": [
     "None",
@@ -59,7 +59,7 @@
     "Gitlab",
     "Github"
   ],
-  "keep_local_envs_in_vcs": "y",
+  "keep_local_envs_in_vcs": "n",
   "debug": "n",
   "add_docs": "n",
   "add_locale": "n",
