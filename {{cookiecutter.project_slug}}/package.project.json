@@ -1,0 +1,25 @@
+{
+  "name": "{{cookiecutter.project_slug}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw-wagtail-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/global.tailwind.css -o {{cookiecutter.project_slug}}/static/css/global.css --watch",
+    "tw-wagtail-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/global.tailwind.css -o {{cookiecutter.project_slug}}/static/css/global.css --minify",
+
+    "tw-admin-watch": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/admin.tailwind.css -o {{cookiecutter.project_slug}}/static/css/admin.css --watch",
+    "tw-admin-build": "tailwindcss -i {{cookiecutter.project_slug}}/static/css/admin.tailwind.css -o {{cookiecutter.project_slug}}/static/css/admin.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "stylelint-config-standard": "^34.0.0",
+    "yuglify": "^2.0.0"
+  }
+}

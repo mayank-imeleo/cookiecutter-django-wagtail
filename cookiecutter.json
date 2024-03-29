@@ -61,5 +61,8 @@
   ],
   "keep_local_envs_in_vcs": "y",
   "debug": "n",
-  "primary_color": "#blue"
+  "add_docs": "n",
+  "add_locale": "n",
+  "add_utility": "n",
+  "primary_color": "blue"
 }

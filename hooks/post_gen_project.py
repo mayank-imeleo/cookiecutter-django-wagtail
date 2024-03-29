@@ -62,7 +62,8 @@ def remove_docker_files():
     for file_name in file_names:
         os.remove(file_name)
     if "{{ cookiecutter.use_pycharm }}".lower() == "y":
-        file_names = ["docker_compose_up_django.xml", "docker_compose_up_docs.xml"]
+        file_names = ["docker_compose_up_django.xml",
+                      "docker_compose_up_docs.xml"]
         for file_name in file_names:
             os.remove(os.path.join(".idea", "runConfigurations", file_name))
 
@@ -89,7 +90,8 @@ def remove_heroku_build_hooks():
 
 
 def remove_sass_files():
-    shutil.rmtree(os.path.join("{{cookiecutter.project_slug}}", "static", "sass"))
+    shutil.rmtree(
+        os.path.join("{{cookiecutter.project_slug}}", "static", "sass"))
 
 
 def remove_gulp_files():
@@ -231,7 +233,8 @@ def remove_dotgithub_folder():
 
 
 def generate_random_string(
-    length, using_digits=False, using_ascii_letters=False, using_punctuation=False
+    length, using_digits=False, using_ascii_letters=False,
+    using_punctuation=False
 ):
     """
     Example:
@@ -364,9 +367,11 @@ def append_to_gitignore_file(ignored_line):
 
 def set_flags_in_envs(postgres_user, celery_flower_user, debug=False):
     local_django_envs_path = os.path.join(".envs", ".local", ".django")
-    production_django_envs_path = os.path.join(".envs", ".production", ".django")
+    production_django_envs_path = os.path.join(".envs", ".production",
+                                               ".django")
     local_postgres_envs_path = os.path.join(".envs", ".local", ".postgres")
-    production_postgres_envs_path = os.path.join(".envs", ".production", ".postgres")
+    production_postgres_envs_path = os.path.join(".envs", ".production",
+                                                 ".postgres")
 
     set_django_secret_key(production_django_envs_path)
     set_django_admin_url(production_django_envs_path)
@@ -385,7 +390,8 @@ def set_flags_in_envs(postgres_user, celery_flower_user, debug=False):
     set_celery_flower_password(
         local_django_envs_path, value=DEBUG_VALUE if debug else None
     )
-    set_celery_flower_user(production_django_envs_path, value=celery_flower_user)
+    set_celery_flower_user(production_django_envs_path,
+                           value=celery_flower_user)
     set_celery_flower_password(
         production_django_envs_path, value=DEBUG_VALUE if debug else None
     )
@@ -416,7 +422,16 @@ def remove_aws_dockerfile():
 
 
 def remove_storages_module():
-    os.remove(os.path.join("{{cookiecutter.project_slug}}", "utils", "storages.py"))
+    os.remove(
+        os.path.join("{{cookiecutter.project_slug}}", "utils", "storages.py"))
+
+def setup_node_project():
+    # copy package.project.json to package.json
+    shutil.copy("package.project.json", "package.json")
+    # remove package.project.json
+    os.remove("package.project.json")
+    # install node modules
+    os.system("npm install")
 
 
 def main():
@@ -460,8 +475,8 @@ def main():
         if "{{ cookiecutter.keep_local_envs_in_vcs }}".lower() == "y":
             print(
                 INFO + ".env(s) are only utilized when Docker Compose and/or "
-                "Heroku support is enabled so keeping them does not "
-                "make sense given your current setup." + TERMINATOR
+                       "Heroku support is enabled so keeping them does not "
+                       "make sense given your current setup." + TERMINATOR
             )
         remove_envs_and_associated_files()
     else:
@@ -490,7 +505,7 @@ def main():
     ):
         print(
             WARNING + "You chose to not use any cloud providers nor Docker, "
-            "media files won't be served in production." + TERMINATOR
+                      "media files won't be served in production." + TERMINATOR
         )
         remove_storages_module()
 
@@ -510,6 +525,20 @@ def main():
 
     if "{{ cookiecutter.use_async }}".lower() == "n":
         remove_async_files()
+
+    # remove docs
+    if "{{add_docs}}".lower() == "n":
+        shutil.rmtree("docs")
+
+    # remove utility
+    if "{{add_utility}}".lower() == "n":
+        shutil.rmtree("utility")
+
+    # remove locale
+    if "{{add_locale}}".lower() == "n":
+        shutil.rmtree("locale")
+
+    setup_node_project()
 
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
 

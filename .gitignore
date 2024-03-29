@@ -209,3 +209,6 @@ tags
 .idea/
 
 .pytest_cache/
+
+.cookiecutter_replay/
+/.cookiecutter_replay/
