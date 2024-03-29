@@ -527,15 +527,15 @@ def main():
         remove_async_files()
 
     # remove docs
-    if "{{add_docs}}".lower() == "n":
+    if "{{cookiecutter.add_docs}}".lower() == "n":
         shutil.rmtree("docs")
 
     # remove utility
-    if "{{add_utility}}".lower() == "n":
+    if "{{cookiecutter.add_utility}}".lower() == "n":
         shutil.rmtree("utility")
 
     # remove locale
-    if "{{add_locale}}".lower() == "n":
+    if "{{cookiecutter.add_locale}}".lower() == "n":
         shutil.rmtree("locale")
 
     setup_node_project()
