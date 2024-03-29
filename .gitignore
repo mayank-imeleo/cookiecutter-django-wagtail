@@ -210,5 +210,4 @@ tags
 
 .pytest_cache/
 
-.cookiecutter_replay/
-/.cookiecutter_replay/
+.cookiecutter_replay
