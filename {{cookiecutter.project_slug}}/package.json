@@ -32,7 +32,12 @@
     "webpack-bundle-tracker": "^1.4.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.6.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "tailwindcss": "^3.3.3",
+    "stylelint-config-standard": "^34.0.0",
+    "yuglify": "^2.0.0"
   },
   "engines": {
     "node": "16"
@@ -41,9 +46,15 @@
     "last 2 versions"
   ],
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "scripts": {
+    "tw-wagtail-watch": "tailwindcss -i mooving_oms/static/css/global.tailwind.css -o mooving_oms/static/css/global.css --watch",
+    "tw-wagtail-build": "tailwindcss -i mooving_oms/static/css/global.tailwind.css -o mooving_oms/static/css/global.css --minify",
+    "tw-admin-watch": "tailwindcss -i mooving_oms/static/css/admin.tailwind.css -o mooving_oms/static/css/admin.css --watch",
+    "tw-admin-build": "tailwindcss -i mooving_oms/static/css/admin.tailwind.css -o mooving_oms/static/css/admin.css --minify",
     "dev": "",
     "build": ""
   }
