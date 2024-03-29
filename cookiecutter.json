@@ -60,5 +60,6 @@
     "Github"
   ],
   "keep_local_envs_in_vcs": "y",
-  "debug": "n"
+  "debug": "n",
+  "primary_color": "#blue"
 }
