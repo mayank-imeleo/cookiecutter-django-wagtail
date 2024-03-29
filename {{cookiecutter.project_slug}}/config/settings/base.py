@@ -253,8 +253,8 @@ EMAIL_TIMEOUT = 5
 # ADMIN
 # ------------------------------------------------------------------------------
 # Django Admin URL.
-DJANGO_ADMIN_URL = "django-admin/"
-WAGTAIL_ADMIN_URL = "admin/"
+DJANGO_ADMIN_URL = "admin/"
+WAGTAIL_ADMIN_URL = "cms/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [("""{{cookiecutter.author_name}}""", "{{cookiecutter.email}}")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers

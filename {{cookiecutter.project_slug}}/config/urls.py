@@ -10,28 +10,35 @@ from django.views.generic import TemplateView
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
-
+from django.views.generic import RedirectView
 from {{ cookiecutter.project_slug }}.search import views as search_views  # noqa isort:skip
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="home/home_page.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
+    # path("", TemplateView.as_view(template_name="home/home_page.html"), name="home"),
+    # path(
+    #     "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+    # ),
+
+    path("",RedirectView.as_view(url=f"{settings.WAGTAIL_ADMIN_URL}"),name="home",),
+
     # Django Admin, use {% raw %}{% url "admin:index" %}{% endraw %}
     path(settings.DJANGO_ADMIN_URL, admin.site.urls),
     # Wagtail Admin
     path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
+
     re_path(r"^documents/", include(wagtaildocs_urls)),
     re_path(r"^search/$", search_views.search, name="search"),
+
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
     path("", include("allauth.urls")),
+
     # Your stuff: custom urls includes go here
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail’s page serving mechanism. This should be the last pattern in
     # the list:
     path("", include(wagtail_urls)),
+
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    url(r"^pages/", include(wagtail_urls)),
