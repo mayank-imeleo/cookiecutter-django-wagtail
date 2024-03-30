@@ -433,12 +433,9 @@ def remove_storages_module():
 
 
 def setup_node_project():
-    # copy package.project.json to package.json
     shutil.copy("package.project.json", "package.json")
-    # remove package.project.json
     os.remove("package.project.json")
-    # install node modules
-    os.system("npm install")
+    os.system("sh setup-node.sh")
 
 
 def main():
