@@ -32,6 +32,12 @@ SUCCESS = "\x1b[1;32m [SUCCESS]: "
 
 DEBUG_VALUE = "debug"
 
+PYCHARM_TIPS = """
+PYCHARM TIPS:
+1. Enable node code assistance.
+2. Set node interpreter to latest version.
+"""
+
 
 def remove_open_source_files():
     file_names = ["CONTRIBUTORS.txt", "LICENSE"]
@@ -425,6 +431,7 @@ def remove_storages_module():
     os.remove(
         os.path.join("{{cookiecutter.project_slug}}", "utils", "storages.py"))
 
+
 def setup_node_project():
     # copy package.project.json to package.json
     shutil.copy("package.project.json", "package.json")
@@ -541,6 +548,8 @@ def main():
     setup_node_project()
 
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
+
+    print(PYCHARM_TIPS)
 
 
 if __name__ == "__main__":
