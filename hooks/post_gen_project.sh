@@ -46,5 +46,6 @@ npm install yuglify
 #echo "creating django database {{cookiecutter.database_name}}...."
 #django_create_db "{{cookiecutter.database_name}}"
 
+echo "use source venv/bin/activate to activate the virtual environment...."
 
 echo "executing post_gen_project.sh finished...."
