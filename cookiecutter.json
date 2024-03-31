@@ -65,5 +65,8 @@
   "add_docs": "n",
   "add_locale": "n",
   "add_utility": "n",
-  "primary_color": "blue"
+  "primary_color": "blue",
+  "_copy_without_render": [
+    "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/**/templates/**.html"
+  ]
 }
