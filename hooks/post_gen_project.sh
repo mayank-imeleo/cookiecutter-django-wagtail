@@ -28,3 +28,9 @@ npm install prettier
 
 # install yuglify
 npm install yuglify
+
+
+# Django setup
+# ------------------------------------------------------------------------------
+echo "creating django database {{cookiecutter.database_name}}...."
+django_create_db "{{cookiecutter.database_name}}"
