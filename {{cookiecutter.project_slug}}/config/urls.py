@@ -49,6 +49,21 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
 {%- endif %}
 
+# API URLS
+urlpatterns += [
+    # API base url
+    path("api/", include("config.api_router")),
+    path("api/v2/", wagtail_api_router.urls),
+    # DRF auth token
+    path("auth-token/", AuthTokenUserIdAPIView.as_view()),
+    path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
+    path(
+        "api/docs/",
+        SpectacularSwaggerView.as_view(url_name="api-schema"),
+        name="api-docs",
+    ),
+]
+
 if settings.DEBUG:
     # Wagtail settings: Serve static and media files from development server
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
