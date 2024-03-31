@@ -431,6 +431,11 @@ def remove_storages_module():
     os.remove(
         os.path.join("{{cookiecutter.project_slug}}", "utils", "storages.py"))
 
+def setup_poetry():
+    print("Setting up poetry")
+    os.system("poetry install")
+    # os.system("poetry run pre-commit install")
+    # os.system("poetry run pre-commit autoupdate")
 
 def setup_node_project():
     shutil.copy("package.project.json", "package.json")
@@ -542,6 +547,7 @@ def main():
     if "{{cookiecutter.add_locale}}".lower() == "n":
         shutil.rmtree("locale")
 
+    setup_poetry()
     setup_node_project()
 
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
