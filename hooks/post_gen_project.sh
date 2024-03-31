@@ -2,6 +2,8 @@
 
 set -eu
 
+echo "executing post_gen_project.sh...."
+
 # setup poetry
 # ------------------------------------------------------------------------------
 echo "Setting up Poetry...."
@@ -34,3 +36,6 @@ npm install yuglify
 # ------------------------------------------------------------------------------
 echo "creating django database {{cookiecutter.database_name}}...."
 django_create_db "{{cookiecutter.database_name}}"
+
+
+echo "executing post_gen_project.sh finished...."
