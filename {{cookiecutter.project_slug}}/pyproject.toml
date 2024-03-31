@@ -1,0 +1,113 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = ""
+authors = ["{{cookiecutter.author_name}} <{{cookiecutter.email}}>"]
+readme = "README.md"
+package-mode = false
+
+[vi]
+
+# Main Dependencies
+# ------------------------------------------------------------------------------
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+pytz = "2023.3"  # https://github.com/stub42/pytz
+python-slugify = "8.0.1"  # https://github.com/un33k/python-slugify
+Pillow = "10.0.0"  # https://github.com/python-pillow/Pillow
+argon2-cffi = "21.3.0"  # https://github.com/hynek/argon2_cffi
+whitenoise = "6.6.0"  # https://github.com/evansd/whitenoise
+redis = "4.5.4"  # https://github.com/redis/redis-py
+hiredis = "2.2.2"  # https://github.com/redis/hiredis-py
+celery = "5.3.6"  # pyup: < 6.0  # https://github.com/celery/celery
+django-celery-beat = "2.6.0"  # https://github.com/celery/django-celery-beat
+django-celery-results = "2.5.1" # https://github.com/celery/django-celery-results
+phonenumbers = "8.13.33"
+
+
+# Django
+# ------------------------------------------------------------------------------
+django = "5.0.3"    # https://www.djangoproject.com/
+django-environ = "0.11.2"  # https://github.com/joke2k/django-environ
+django-model-utils = "4.4.0"  # https://github.com/jazzband/django-model-utils
+django-allauth = "0.61.1"  # https://github.com/pennersr/django-allauth
+django-crispy-forms = "2.1"  # https://github.com/django-crispy-forms/django-crispy-forms
+crispy-bootstrap5 = "0.7"  # https://github.com/django-crispy-forms/crispy-bootstrap5
+django-redis = "5.4.0"  # https://github.com/jazzband/django-redis
+django-tailwind = "3.8.0" # https://github.com/timonweb/django-tailwind
+django-phonenumber-field = "7.3.0" # https://github.com/stefanfoulis/django-phonenumber-field
+django-countries = "7.6" # https://github.com/SmileyChris/django-countries
+django-cities-light = "3.10.1" # https://github.com/yourlabs/django-cities-light
+django-localflavor = "4.0" # https://github.com/django/django-localflavor
+django-smart-selects = "1.6.0" # https://github.com/jazzband/django-smart-selects
+django-import-export = "3.3.7" # https://github.com/django-import-export/django-import-export
+django-filter = "23.5" # pyup: < 24  https://github.com/carltongibson/django-filter
+mypy = "1.9.0" # https://github.com/python/mypy
+django-extensions = "3.2.3"  # https://github.com/django-extensions/django-extensions
+django-simple-history = "3.5.0" # https://github.com/jazzband/django-simple-history
+
+# Django REST Framework
+djangorestframework = "3.15.1"  # https://github.com/encode/django-rest-framework
+django-cors-headers = "4.3.1"  # https://github.com/adamchainz/django-cors-headers
+djangorestframework-camel-case = "1.4.2" # https://github.com/vbabiy/djangorestframework-camel-case
+
+# Wagtail
+# ------------------------------------------------------------------------------
+wagtail = "6.0.1"  # https://github.com/wagtail/wagtail
+#git+https://github.com/spapas/wagtail-multi-upload.git@"0.3.0"
+
+
+
+# Dev Dependencies
+# ------------------------------------------------------------------------------
+[tool.poetry.group.dev.dependencies]
+
+Werkzeug = "3.0.1" # https://github.com/pallets/werkzeug
+ipdb = "0.13.13"  # https://github.com/gotcha/ipdb
+psycopg2-binary = "2.9.9"  # https://github.com/psycopg/psycopg2
+watchfiles = "0.21.0"  # https://github.com/samuelcolvin/watchfiles
+
+# Testing
+# -------------------------------------
+mypy = "1.9.0"  # https://github.com/python/mypy
+django-stubs = "4.2.7" # https://github.com/typeddjango/django-stubs
+pytest = "8.1.1"  # https://github.com/pytest-dev/pytest
+pytest-sugar = "1.0.0"  # https://github.com/Frozenball/pytest-sugar
+sphinx = "7.2.6"  # https://github.com/sphinx-doc/sphinx
+sphinx-autobuild = "2024.2.4" # https://github.com/GaretJax/sphinx-autobuild
+
+# Code quality
+# -------------------------------------
+flake8 = "7.0.0"  # https://github.com/PyCQA/flake8
+flake8-isort = "6.1.1"  # https://github.com/gforcada/flake8-isort
+coverage = "7.4.4"  # https://github.com/nedbat/coveragepy
+black = "24.3.0"  # https://github.com/psf/black
+pylint-django = "2.5.5"  # https://github.com/PyCQA/pylint-django
+pylint-celery = "0.3"  # https://github.com/PyCQA/pylint-celery
+pre-commit = "3.7.0"  # https://github.com/pre-commit/pre-commit
+
+# Django
+# -------------------------------------
+factory-boy = "3.3.0"  # https://github.com/FactoryBoy/factory_boy
+
+django-debug-toolbar = "4.3.0"  # https://github.com/jazzband/django-debug-toolbar
+django-extensions = "3.2.3"  # https://github.com/django-extensions/django-extensions
+django-coverage-plugin = "3.1.0"  # https://github.com/nedbat/django_coverage_plugin
+pytest-django = "4.8.0"  # https://github.com/pytest-dev/pytest-django
+
+# Prod dependencies
+# ------------------------------------------------------------------------------
+[tool.poetry.group.prod.dependencies]
+
+gunicorn = "21.2.0"  # https://github.com/benoitc/gunicorn
+psycopg2 = "2.9.9"  # https://github.com/psycopg/psycopg2
+
+
+
+# ------------------------------------------------------------------------------
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
