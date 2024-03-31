@@ -7,15 +7,19 @@ echo "executing post_gen_project.sh...."
 # setup poetry
 # ------------------------------------------------------------------------------
 echo "Setting up Poetry...."
+
+echo "Creating a virtual environment...."
 poetry env use python3.10
-poetry shell
+
+echo "Installing dependencies...."
+source .venv/bin/activate
 poetry install
 
 echo "Creating a symlink for the virtual environment. venv -> .venv...."
 ln -sf .venv venv
 
-echo "Activating the virtual environment...."
-source venv/bin/activate
+#echo "Activating the virtual environment...."
+#source venv/bin/activate
 
 # setup Node
 # ------------------------------------------------------------------------------
@@ -38,9 +42,9 @@ npm install yuglify
 
 
 # Django setup
-# ------------------------------------------------------------------------------
-echo "creating django database {{cookiecutter.database_name}}...."
-django_create_db "{{cookiecutter.database_name}}"
+## ------------------------------------------------------------------------------
+#echo "creating django database {{cookiecutter.database_name}}...."
+#django_create_db "{{cookiecutter.database_name}}"
 
 
 echo "executing post_gen_project.sh finished...."
