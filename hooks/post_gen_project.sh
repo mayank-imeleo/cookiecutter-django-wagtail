@@ -11,6 +11,11 @@ poetry env use python3.10
 poetry shell
 poetry install
 
+echo "Creating a symlink for the virtual environment. venv -> .venv...."
+ln -sf .venv venv
+
+echo "Activating the virtual environment...."
+source venv/bin/activate
 
 # setup Node
 # ------------------------------------------------------------------------------
