@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 
 
 module.exports = {
-    content: ["imeleo/**/*.{html,js}"],
+    content: ["{{cookiecutter.project_slug}}/**/*.{html,js}"],
     theme: {
         colors: {
             primary: colors.blue,
