@@ -67,6 +67,6 @@
   "add_utility": "n",
   "primary_color": "blue",
   "_copy_without_render": [
-    "{{cookiecutter.project_slug}}/**/templates/**/*.html"
+    "{{cookiecutter.project_slug}}/**/*.html"
   ]
 }
