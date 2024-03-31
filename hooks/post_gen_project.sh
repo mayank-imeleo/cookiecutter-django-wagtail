@@ -10,13 +10,13 @@ echo "Setting up Poetry...."
 
 echo "Creating a virtual environment...."
 poetry env use python3.10
-
-echo "Installing dependencies...."
-source .venv/bin/activate
-poetry install
-
 echo "Creating a symlink for the virtual environment. venv -> .venv...."
 ln -sf .venv venv
+
+echo "Installing dependencies...."
+source venv/bin/activate
+poetry install
+
 
 #echo "Activating the virtual environment...."
 #source venv/bin/activate
