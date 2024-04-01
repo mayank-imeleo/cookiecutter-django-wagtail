@@ -334,6 +334,7 @@ dump.rdb
 MailHog
 {%- endif %}
 {{ cookiecutter.project_slug }}/media/
+{{ cookiecutter.project_slug }}/static/pyutils
 
 .pytest_cache/
 
