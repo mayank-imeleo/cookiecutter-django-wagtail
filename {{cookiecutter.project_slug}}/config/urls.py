@@ -95,3 +95,7 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+admin.site.site_header = "Imeleo Admin Header"
+admin.site.site_title = "Imeleo Admin Site Title"
+admin.site.index_title = "Imeleo Admin Index Title"
