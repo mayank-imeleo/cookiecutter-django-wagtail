@@ -14,35 +14,31 @@ from django.views.generic import RedirectView
 from {{ cookiecutter.project_slug }}.search import views as search_views  # noqa isort:skip
 
 urlpatterns = [
-    # path("", TemplateView.as_view(template_name="home/home_page.html"), name="home"),
-    # path(
-    #     "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    # ),
 
-    path("",RedirectView.as_view(url=f"{settings.WAGTAIL_ADMIN_URL}"),name="home",),
+                  path(
+                      "",
+                      RedirectView.as_view(url=f"{settings.WAGTAIL_ADMIN_URL}"),
+                      name="home",
+                  ),
 
-    # Django Admin, use {% raw %}{% url "admin:index" %}{% endraw %}
-    path(settings.DJANGO_ADMIN_URL, admin.site.urls),
-    # Wagtail Admin
-    path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
+                  # Wagtail Admin
+                  path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
 
-    re_path(r"^documents/", include(wagtaildocs_urls)),
-    re_path(r"^search/$", search_views.search, name="search"),
+                  # Django Admin, use {% url "admin:index" %}
+                  path(settings.DJANGO_ADMIN_URL, admin.site.urls),
 
-    # User management
-    path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
-    path("", include("allauth.urls")),
+                  # Documents
+                  re_path(r"^documents/", include(wagtaildocs_urls)),
 
-    # Your stuff: custom urls includes go here
-    # For anything not caught by a more specific rule above, hand over to
-    # Wagtail’s page serving mechanism. This should be the last pattern in
-    # the list:
-    path("", include(wagtail_urls)),
+                  # Search
+                  re_path(r"^search/$", search_views.search, name="search"),
 
-    # Alternatively, if you want Wagtail pages to be served from a subpath
-    # of your site, rather than the site root:
-    #    url(r"^pages/", include(wagtail_urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  # Users
+                  path("users/",
+                       include("imeleo.users.urls", namespace="users")),
+
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 {%- if cookiecutter.use_async == 'y' %}
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
@@ -95,6 +91,10 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+urlpatterns += [
+    path("", include(wagtail_urls)),
+]
 
 admin.site.site_header = "Imeleo Admin Header"
 admin.site.site_title = "Imeleo Admin Site Title"
