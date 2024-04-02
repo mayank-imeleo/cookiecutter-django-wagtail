@@ -41,7 +41,7 @@ django-phonenumber-field = "7.3.0" # https://github.com/stefanfoulis/django-phon
 django-countries = "7.6" # https://github.com/SmileyChris/django-countries
 django-cities-light = "3.10.1" # https://github.com/yourlabs/django-cities-light
 django-localflavor = "4.0" # https://github.com/django/django-localflavor
-django-smart-selects = "1.6.0" # https://github.com/jazzband/django-smart-selects
+django-smart-selects = "^1.0" # https://github.com/jazzband/django-smart-selects
 django-import-export = "3.3.7" # https://github.com/django-import-export/django-import-export
 django-filter = "23.5" # pyup: < 24  https://github.com/carltongibson/django-filter
 mypy = "1.9.0" # https://github.com/python/mypy
@@ -52,6 +52,7 @@ django-simple-history = "3.5.0" # https://github.com/jazzband/django-simple-hist
 djangorestframework = "3.15.1"  # https://github.com/encode/django-rest-framework
 django-cors-headers = "4.3.1"  # https://github.com/adamchainz/django-cors-headers
 djangorestframework-camel-case = "1.4.2" # https://github.com/vbabiy/djangorestframework-camel-case
+drf-spectacular = "^0.27.0"
 
 # Wagtail
 # ------------------------------------------------------------------------------

@@ -102,7 +102,17 @@ THIRD_PARTY_APPS = [
 {%- endif %}
 {%- if cookiecutter.frontend_pipeline == 'Webpack' %}
     "webpack_loader",
-{%- endif %}
+{%- endif %},
+    "phonenumber_field",
+    "cities_light",
+    "smart_selects",
+    # "pipeline",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "corsheaders",
+    "drf_spectacular",
+    "django_filters",
+    "simple_history",
 ]
 
 LOCAL_APPS = [
