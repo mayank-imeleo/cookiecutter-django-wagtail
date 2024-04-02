@@ -61,8 +61,23 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # APPS
 # ------------------------------------------------------------------------------
+
+DJANGO_APPS = [
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.sites",
+    "django.contrib.messages",
+    # http://whitenoise.evans.io/en/latest/django.html#using-whitenoise-in-development
+    "whitenoise.runserver_nostatic",
+    "django.contrib.staticfiles",
+    # "django.contrib.humanize", # Handy template tags
+    "django.contrib.admin",
+    "django.forms",
+]
+
 # wagtail apps
-WAGTAIL = [
+WAGTAIL_APPS = [
     "{{cookiecutter.project_slug}}.home",
     "{{cookiecutter.project_slug}}.search",
     "wagtail.contrib.forms",
@@ -80,17 +95,7 @@ WAGTAIL = [
     "taggit",
 ]
 
-DJANGO_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.sites",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    # "django.contrib.humanize", # Handy template tags
-    "django.contrib.admin",
-    "django.forms",
-]
+
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
@@ -121,7 +126,7 @@ LOCAL_APPS = [
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS + WAGTAIL
+INSTALLED_APPS = DJANGO_APPS + WAGTAIL_APPS +  THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIGRATIONS
 # ------------------------------------------------------------------------------
