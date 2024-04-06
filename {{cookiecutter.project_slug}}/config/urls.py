@@ -24,7 +24,7 @@ urlpatterns = [
                   # Wagtail Admin
                   path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
 
-                  # Django Admin, use {% url "admin:index" %}
+                  # Django Admin
                   path(settings.DJANGO_ADMIN_URL, admin.site.urls),
 
                   # Documents
