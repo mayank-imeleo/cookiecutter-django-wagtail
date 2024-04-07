@@ -35,7 +35,7 @@ urlpatterns = [
 
                   # Users
                   path("users/",
-                       include("imeleo.users.urls", namespace="users")),
+                       include("{{cookiecutter.project_slug}}.users.urls", namespace="users")),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
