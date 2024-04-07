@@ -32,7 +32,7 @@ phonenumbers = "8.13.33"
 django = "5.0.3"    # https://www.djangoproject.com/
 django-environ = "0.11.2"  # https://github.com/joke2k/django-environ
 django-model-utils = "4.4.0"  # https://github.com/jazzband/django-model-utils
-django-allauth = "0.61.1"  # https://github.com/pennersr/django-allauth
+django-allauth = "0.54.0"  # https://github.com/pennersr/django-allauth
 django-crispy-forms = "2.1"  # https://github.com/django-crispy-forms/django-crispy-forms
 crispy-bootstrap5 = "0.7"  # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis = "5.4.0"  # https://github.com/jazzband/django-redis
@@ -64,6 +64,8 @@ wagtail = "6.0.1"  # https://github.com/wagtail/wagtail
 # Dev Dependencies
 # ------------------------------------------------------------------------------
 [tool.poetry.group.dev.dependencies]
+
+pyutils = {path = "/home/ubuntu/development/pyutils", develop = true}
 
 Werkzeug = "3.0.1" # https://github.com/pallets/werkzeug
 ipdb = "0.13.13"  # https://github.com/gotcha/ipdb

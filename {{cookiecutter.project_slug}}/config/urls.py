@@ -12,6 +12,13 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from django.views.generic import RedirectView
 from {{ cookiecutter.project_slug }}.search import views as search_views  # noqa isort:skip
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from pyutils.rest_framework.views import AuthTokenUserIdAPIView
+from django.conf import settings
+from django.urls import path
+from pyutils.rest_framework.viewsets import UserViewSet
+from pyutils.django.viewsets import router_register_viewset
+from rest_framework.routers import DefaultRouter, SimpleRouter
 
 urlpatterns = [
 
