@@ -1,8 +1,8 @@
 from django.urls import path
 
-from pyutils.rest_framework.viewsets import UserViewSet, router_register_viewset
-
-
+from pyutils.rest_framework.viewsets import UserViewSet
+from rest_framework.routers import DefaultRouter, SimpleRouter
+from pyutils.django.viewsets import router_register_viewset
 from {{ cookiecutter.project_slug }}.users.views import (
     user_detail_view,
     user_redirect_view,
