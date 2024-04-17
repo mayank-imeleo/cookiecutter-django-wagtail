@@ -19,7 +19,7 @@ from django.urls import path
 from pyutils.rest_framework.viewsets import UserViewSet
 from pyutils.django.viewsets import router_register_viewset
 from rest_framework.routers import DefaultRouter, SimpleRouter
-
+from animall.home.wagtail_api import wagtail_api_router
 urlpatterns = [
 
                   path(

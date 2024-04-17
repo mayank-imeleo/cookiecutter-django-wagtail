@@ -28,9 +28,10 @@ class UserAdmin(auth_admin.UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-    list_display = ["email", "name", "phone_numbers","group_names"]
+    list_display = ["email", "name", "phone_number","group_names"]
     search_fields = ["name"]
     list_filter = ("groups",)
+    ordering = ["email"]
 
     def group_names(self, instance):
         return instance.group_names
