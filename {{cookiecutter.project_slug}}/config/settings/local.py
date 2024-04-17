@@ -103,3 +103,8 @@ WEBPACK_LOADER["DEFAULT"]["CACHE"] = not DEBUG  # noqa: F405
 {%- endif %}
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# django-browser-reload
+# ------------------------------------------------------------------------------
+INSTALLED_APPS += ["django_browser_reload"]  # noqa: F405
+MIDDLEWARE += ["django_browser_reload.middleware.BrowserReloadMiddleware"]  # noqa: F405
