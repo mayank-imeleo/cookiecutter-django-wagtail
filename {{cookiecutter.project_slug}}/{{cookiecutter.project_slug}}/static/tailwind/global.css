@@ -26,29 +26,30 @@
   --default-button-hover-bg: theme('colors.primary.500');
 }
 
-@media (max-width: 1024px) {
-  .login {
-    /*background: rgb(162, 159, 209);*/
-    /*background: linear-gradient(90deg, rgba(162, 159, 209, 1) 0%, rgba(235, 86, 6, 1) 42%);*/
-    background: linear-gradient(
-      to top,
-      theme('colors.primary.600'),
-      theme('colors.primary.300')
-    );
-  }
+
+.login {
+  /*background: linear-gradient(var(--w-color-white), var(--w-color-primary));*/
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),
+  url(../images/login-bg.png) no-repeat center;
 }
 
 @media (min-width: 1024px) {
   .login {
-    background: linear-gradient(var(--w-color-white), var(--w-color-primary));
-    /*url(../images/login-bg-1380x920.png) no-repeat center;*/
     background-size: 100% auto;
   }
 
   .content-wrapper {
-    background-color: theme('colors.primary.500');
+    background-color: #22c55e;
   }
 }
+
+@media (max-width: 1024px) {
+  .login {
+    /*Do not tile or stretch background image*/
+    background-size: cover;
+  }
+}
+
 
 .bg-primary {
   background-color: var(--w-color-primary);
