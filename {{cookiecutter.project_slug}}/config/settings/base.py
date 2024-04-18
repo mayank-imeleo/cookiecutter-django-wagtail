@@ -40,6 +40,11 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASE = env.db(
+    "DATABASE_URL",
+    default="postgres:///bizleo",
+)
+DATABASE["ENGINE"] = "django.contrib.gis.db.backends.postgis"
 {% if cookiecutter.use_docker == "y" -%}
 DATABASES = {"default": env.db("DATABASE_URL")}
 {%- else %}
@@ -111,6 +116,7 @@ THIRD_PARTY_APPS = [
     "webpack_loader",
 {%- endif %},
     "phonenumber_field",
+    "cities",
     "cities_light",
     "smart_selects",
     # "pipeline",
