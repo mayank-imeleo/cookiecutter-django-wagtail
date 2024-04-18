@@ -34,6 +34,9 @@ urlpatterns = [
                   # Django Admin
                   path(settings.DJANGO_ADMIN_URL, admin.site.urls),
 
+                  # smart selects
+                  re_path(r"^chaining/", include("smart_selects.urls")),
+
                   # Documents
                   re_path(r"^documents/", include(wagtaildocs_urls)),
 
