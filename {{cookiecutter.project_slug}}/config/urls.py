@@ -45,7 +45,7 @@ urlpatterns = [
 
                   # Users
                   path("users/",
-                       include("{{cookiecutter.project_slug}}.users.urls", namespace="users")),
+                       include("{{cookiecutter.project_slug}}.apps.users.urls", namespace="users")),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

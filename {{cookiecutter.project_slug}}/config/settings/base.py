@@ -85,8 +85,8 @@ DJANGO_APPS = [
 
 # wagtail apps
 WAGTAIL_APPS = [
-    "{{cookiecutter.project_slug}}.home",
-    "{{cookiecutter.project_slug}}.search",
+    "{{cookiecutter.project_slug}}.apps.home",
+    "{{cookiecutter.project_slug}}.apps.search",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -129,7 +129,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "{{ cookiecutter.project_slug }}.users",
+    "{{ cookiecutter.project_slug }}.apps.users",
     # Your stuff: custom apps go here
 ]
 
@@ -139,7 +139,7 @@ INSTALLED_APPS = DJANGO_APPS + WAGTAIL_APPS +  THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "{{ cookiecutter.project_slug }}.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "{{ cookiecutter.project_slug }}.apps.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
